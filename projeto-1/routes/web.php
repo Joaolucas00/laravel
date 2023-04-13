@@ -28,6 +28,10 @@ Route::get('/listing/{id}', function ($id) {
     ]);
 });
 
+Route::get('/tailwind', function () {
+    return view('tailwind');
+});
+
 
 /** Comando do php artisan
  *    make:
