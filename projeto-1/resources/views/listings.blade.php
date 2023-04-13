@@ -13,7 +13,7 @@
 
 @foreach ($listings as $lis)
     <h2> 
-       <a href="/listing/{{$lis['id']}}"> {{ $lis['titulo'] }} </a> 
+       <a href="/listing/{{$lis['id']}}"> {{ $lis->titulo }} </a> 
     </h2>
     <p> 
         {{ $lis['descricao'] }} 
