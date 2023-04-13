@@ -13,7 +13,7 @@
         .bd-radius {border-radius: 2rem;}
         .bg-color {background-color: rgb(2, 6, 32)}
         .color-w {color: white}
-        .shadow {box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.411)}
+        .shadow {box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.411)}  
     </style>
 </head>
 <body>
