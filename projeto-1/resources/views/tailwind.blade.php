@@ -9,7 +9,6 @@
         .wid-100 {width: 200px}
         .p-5 {padding: 5px;}
         .font-text {font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; text-align: center;}
-        .flex {display: flex;}
         .bd-sl-black {border: 2.5px solid rgb(158, 25, 21);}
         .bd-radius {border-radius: 2rem;}
         .bg-color {background-color: rgb(2, 6, 32)}
@@ -18,6 +17,6 @@
     </style>
 </head>
 <body>
-    <div class="font-text color-w wid-100 p-5 flex bd-sl-black bd-radius bg-color shadow">Olá, Tailwind</div>
+    <div class="font-text color-w wid-100 p-5 bd-sl-black bd-radius bg-color shadow">Olá, Tailwind</div>
 </body>
 </html>
