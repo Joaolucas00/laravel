@@ -63,6 +63,7 @@ Route::get('/listing/{id}', function ($id) {
  *  php artisan make:factory NomeFactory
  * 
  *    migrate:
+ *  php artisan migrate
  *  php artisan migrate:refresh
  *  php artisan migrate:refresh --seed
  * 
