@@ -16,33 +16,6 @@ use App\Models\Listing;
 */
 
 Route::get('/', function () {
-
-    $nome = "Lucas";
-
-    $idade = 19;
-
-    $array = [1, 2, 3, 4, 5];
-
-    $nomes = ["João", "Lucas", "Pedro", "Luan"];
-
-    return view('welcome', [
-        'nome' => $nome,
-        'idade' => $idade,
-        'array' => $array,
-        'pessoas'=> $nomes,
-    ]);
-});
-
-
-Route::get('/ola-mundo', function () {
-    return view('ola-mundo');
-});
-
-Route::get('/produtos', function () {
-    return view('products');
-});
-
-Route::get('/listings', function () {
     return view('listings', [
         'heading' => 'latest Listings', 
         'listings' => Listing::all(),
@@ -106,4 +79,24 @@ Route::get('/post/{id}', function($id) {
 Route::get('/search', function(Request $request) {
     return $request->nome . '' . $request->idade; Pegando valores na url
 });
+
+Route::get('/', function () {
+
+    $nome = "Lucas";
+
+    $idade = 19;
+
+    $array = [1, 2, 3, 4, 5];
+
+    $nomes = ["João", "Lucas", "Pedro", "Luan"];
+
+    return view('welcome', [
+        'nome' => $nome,
+        'idade' => $idade,
+        'array' => $array,
+        'pessoas'=> $nomes,
+    ]);
+});
+
+
 */
