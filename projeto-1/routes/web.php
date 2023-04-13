@@ -56,6 +56,33 @@ Route::get('/listing/{id}', function ($id) {
 });
 
 
+/** Comando do php artisan
+ *    make:
+ *  php artisan make:model AlgumaCoisa
+ *  php artisan make:migration create_algumas_table
+ *  php artisan make:factory NomeFactory
+ * 
+ *    migrate:
+ *  php artisan migrate:refresh
+ *  php artisan migrate:refresh --seed
+ * 
+ *    db:
+ *  php artisan db:seed
+ *  
+ *  
+ **/ 
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 Route::get('/musicas/{id}', function($id) {
     $musica = Listing::find($id);
