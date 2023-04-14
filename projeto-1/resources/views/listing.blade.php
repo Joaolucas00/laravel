@@ -2,7 +2,7 @@
 @section('conteudo')
 @include('partials._search')
 
-<a href="index.html" class="inline-block text-black ml-4 mb-4"
+<a href="/" class="inline-block text-black ml-4 mb-4"
 ><i class="fa-solid fa-arrow-left"></i> Back
 </a>
 <div class="mx-4">
@@ -66,11 +66,10 @@
                     --}}
 
                 <a
-                    href="https://test.com"
+                    href="{{$listing->website}}"
                     target="_blank"
                     class="block bg-black text-white py-2 rounded-xl hover:opacity-80"
-                    ><i class="fa-solid fa-globe"></i> Visit
-                    Website</a
+                    ><i class="fa-solid fa-globe"></i>Visit Website</a
                 >
             </div>
         </div>
