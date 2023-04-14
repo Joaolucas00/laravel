@@ -50,6 +50,9 @@ Route::get('/tailwind', function () {
  *  
  **/ 
 
+ /**
+  *  O método find retorna o modelo que possui uma chave primária correspondente à chave fornecida
+  */
 
 
 
