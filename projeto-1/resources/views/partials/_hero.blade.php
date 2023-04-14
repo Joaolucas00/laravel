@@ -38,5 +38,7 @@ Laravel Blade Partials
 Uma parcial de lâmina é semelhante a uma inclusão ou exigência em PHP. É uma maneira fácil de incluir o conteúdo de outro arquivo dentro de um modelo. Uma inclusão do PHP seria algo como 'incluir arquivo. php' enquanto um blade @include se parece com @include('partials.
             
             É usado um "_" antes do nome do arquivo para saber que é um partial
+
+            É bom para separar as partes do HTML em arquivos diferentes
             
             --}}
