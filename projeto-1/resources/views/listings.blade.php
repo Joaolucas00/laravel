@@ -21,7 +21,7 @@
         />
         <div>
             <h3 class="text-2xl">
-                <a href="show.html">{{ $lis->titulo }}</a>
+                <a href="/listing/{{$lis->id}}">{{ $lis->titulo }}</a>
             </h3>
             <div class="text-xl font-bold mb-4">{{ $lis->empresa}}</div>
             <ul class="flex">
