@@ -12,7 +12,7 @@ Props são apenas dados que queremos passar para esse componente para que possam
 @props(['lis'])
 
 
-<x-card>
+<x-card class="p-7"> {{-- Use $slot para indicar indicar onde vai o conteúdo dentro do component--}}
     <div class="flex">
         <img
             class="hidden w-48 mr-6 md:block"
