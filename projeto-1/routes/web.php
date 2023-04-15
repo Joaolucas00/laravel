@@ -22,12 +22,38 @@ Route::get('/', function () {
     ]);
 });
 
+
+/** Route Model Binding
+ *  Documentação
+ * Ao injetar um model ID em uma rota ou ação do controller, você frequentemente consultará o banco de dados para recuperar o modelo que corresponde a esse ID. 
+ * Laravel route model binding fornece uma maneira conveniente de injetar automaticamente as instâncias do modelo diretamente em suas rotas. 
+ * Por exemplo, em vez de injetar o ID de um usuário, você pode injetar toda a instância do modelo User que corresponda ao ID fornecido.
+ * 
+ * 
+ * Since the $user variable is type-hinted as the App\Models\User Eloquent model and the variable name matches the {user} URI segment, 
+ * Laravel will automatically inject the model instance that has an ID matching the corresponding value from the request URI. 
+ * If a matching model instance is not found in the database, a 404 HTTP response will automatically be generated.
+ * 
+ * 
+ *  Exemplo:
+ */
+
+
+Route::get('/listing/{listing}', function (Listing $listing) {
+    return view('listing', [
+        'listing' => $listing
+    ]);
+});
+
+
+
+ /*
 Route::get('/listing/{id}', function ($id) {
     return view('listing', [
         'listing' => Listing::find($id)
     ]);
 });
-
+*/
 Route::get('/tailwind', function () {
     return view('tailwind');
 });
