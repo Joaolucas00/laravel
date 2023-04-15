@@ -12,7 +12,7 @@ Props são apenas dados que queremos passar para esse componente para que possam
 @props(['lis'])
 
 
-<div class="bg-gray-50 border border-gray-200 rounded p-6">
+<x-card>
     <div class="flex">
         <img
             class="hidden w-48 mr-6 md:block"
@@ -51,4 +51,4 @@ Props são apenas dados que queremos passar para esse componente para que possam
             </div>
         </div>
     </div>
-</div>
+</x-card>
