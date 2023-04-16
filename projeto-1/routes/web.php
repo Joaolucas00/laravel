@@ -15,13 +15,17 @@ use App\Models\Listing;
 |
 */
 
+// Com controller podemos fazer diferente
+/*
 Route::get('/', function () {
     return view('listings', [
         'heading' => 'latest Listings', 
         'listings' => Listing::all(),
     ]);
 });
+*/
 
+// Com controller
 
 /** Route Model Binding
  *  Documentação
@@ -64,6 +68,7 @@ Route::get('/tailwind', function () {
  *  php artisan make:model AlgumaCoisa
  *  php artisan make:migration create_algumas_table
  *  php artisan make:factory NomeFactory
+ *  php artisan make:controller NomeController
  * 
  *    migrate:
  *  php artisan migrate
