@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ListingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Listing;
@@ -27,9 +28,7 @@ Route::get('/', function () {
 
 // Com controller
 
-Route::get('/', function () {
-
-});
+Route::get('/', [ListingController::class, 'index']);
 
 /** ::class 
  * 
@@ -64,11 +63,16 @@ Route::get('/', function () {
  */
 
 
+Route::get('/listing/{listing}', [ListingController::class, 'show']);
+
+ /*   
 Route::get('/listing/{listing}', function (Listing $listing) {
     return view('listing', [
         'listing' => $listing
     ]);
-});
+}); 
+
+*/
 
 
 
@@ -79,6 +83,8 @@ Route::get('/listing/{id}', function ($id) {
     ]);
 });
 */
+
+
 Route::get('/tailwind', function () {
     return view('tailwind');
 });
