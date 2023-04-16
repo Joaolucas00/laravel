@@ -20,10 +20,18 @@ class ListingController extends Controller
     // Show all listings
     public function index() {
         return view('listings.index', [
-            'listings' => Listing::latest(),
+            'listings' => Listing::latest()->filter(request(['tag']))->get(),
             //'listings' => Listing::all()
         ]);
     }
+
+    // get
+    /**
+     *  The get method returns an Illuminate\Support\Collection instance containing the results of the query where each result is an instance of the PHP stdClass object
+     * 
+     */
+
+
     // ::latest()
     /** Laravel provides the latest() method to get the last record from the database.
      * 
