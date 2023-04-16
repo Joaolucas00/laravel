@@ -8,9 +8,25 @@ use Illuminate\Database\Eloquent\Model;
 class Listing extends Model
 {
     use HasFactory;
+
+    public function scopeFilter () {
+
+    }
 }
 
 
+/** Prefixo scope
+ *  Tem a finalidade de facilitar rotinas de consultas no seu model (Eloquent), 
+ * trazendo funcionalidades prévias de consultas SQL, 
+ * ajudando, então, no desenvolvimento e padronização de consultas. 
+ * É divido em Global Scope ou Local Scope.
+ *
+ *  Já no Local Scope é um filtro preparado, 
+ * ou atalho, que só é executado mediante chamada do método, 
+ * sendo diferente do Global Scope que é sempre chamado de forma automática e transparente. 
+ * Tem as mesmas características, 
+ * mas a forma de invocação é o que difere. 
+ */
 
 
 
