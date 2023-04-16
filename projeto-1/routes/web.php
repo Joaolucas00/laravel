@@ -27,6 +27,27 @@ Route::get('/', function () {
 
 // Com controller
 
+Route::get('/', function () {
+
+});
+
+/** ::class 
+ * 
+ *  SomeClass::class will return the fully qualified name of SomeClass including the namespace. This feature was implemented in PHP 5.5.
+ *  class is special, which is provided by php to get the fully qualified class name.
+ * 
+ *  use \App\Console\Commands\Inspire;
+ * protected $commands = [
+ *      Inspire::class, // Equivalent to "App\Console\Commands\Inspire"
+ * ];
+ * 
+ * 
+ */
+
+
+
+
+
 /** Route Model Binding
  *  Documentação
  * Ao injetar um model ID em uma rota ou ação do controller, você frequentemente consultará o banco de dados para recuperar o modelo que corresponde a esse ID. 
