@@ -19,14 +19,14 @@ class ListingController extends Controller
 
     // Show all listings
     public function index() {
-        return view('listings', [
+        return view('listings.index', [
             'listings' => Listing::all()
         ]);
     }
 
     // Show single listing
     public function show(Listing $listing) {
-        return view('listing', [
+        return view('listings.show', [ // Use o ponto (".") caso a view esteja dentro de uma pasta 
             'listing' => $listing
         ]);
     }
