@@ -20,9 +20,24 @@ class ListingController extends Controller
     // Show all listings
     public function index() {
         return view('listings.index', [
-            'listings' => Listing::all()
+            'listings' => Listing::latest(),
+            //'listings' => Listing::all()
         ]);
     }
+    // ::latest()
+    /** Laravel provides the latest() method to get the last record from the database.
+     * 
+     *  latest() is a function defined in Illuminate\Database\Query\Builder Class. It's job is very simple. This is how it is defined.
+     * 
+     * public function latest($column = 'created_at')
+     * {
+     *      return $this->orderBy($column, 'desc');
+     * } 
+     * 
+     * 
+     *  So, It will just orderBy with the column you provide in descending order with the default column will be created_at.
+     * 
+     */
 
     // Show single listing
     public function show(Listing $listing) {
