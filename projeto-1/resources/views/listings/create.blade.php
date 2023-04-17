@@ -1,3 +1,6 @@
+@extends('layout')
+@section('conteudo')
+
 <div
                    class="bg-gray-50 border border-gray-200 p-10 rounded max-w-lg mx-auto mt-24"
                 >
@@ -8,7 +11,11 @@
                         <p class="mb-4">Post a gig to find a developer</p>
                     </header>
 
-                    <form action="">
+                    <form action="/listings" method="POST">
+                        @csrf {{-- Previnir ataque cross-site script. 
+                            
+                            Vídeo sobre: https://www.youtube.com/watch?v=2LYPyUk-L0k 
+                            --}}
                         <div class="mb-6">
                             <label
                                 for="company"
@@ -122,3 +129,4 @@
                         </div>
                     </form>
                 </div>
+@endsection
