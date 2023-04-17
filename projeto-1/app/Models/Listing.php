@@ -11,7 +11,11 @@ class Listing extends Model
 
     public function scopeFilter ($query, array $filters) {
         if ($filters['tag'] ?? false) {
-            $query->where('tags', 'like', '');
+            $query->where('tags', 'like', '%' . request('tag') . '%');
+        }
+
+        if ($filters['search'] ?? false) {
+            $query->where('titulo', 'like', '%' . request('search') . '%')->orWhere('descricao', 'like', '%' . request('search') . '%')->orWhere('tags', 'like', '%' . request('search') . '%');
         }
     }
 }
