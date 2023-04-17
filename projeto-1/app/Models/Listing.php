@@ -32,6 +32,11 @@ class Listing extends Model
  * sendo diferente do Global Scope que é sempre chamado de forma automática e transparente. 
  * Tem as mesmas características, 
  * mas a forma de invocação é o que difere. 
+ * 
+ * 
+ *  Vídeo explicatvo: https://www.youtube.com/watch?v=xL7uRLu_Pzk
+ * 
+ * 
  */
 
 
