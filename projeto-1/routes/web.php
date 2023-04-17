@@ -65,7 +65,7 @@ Route::get('/', [ListingController::class, 'index']);
 
 Route::get('/listing/{listing}', [ListingController::class, 'show']);
 
- /*   
+ /* 
 Route::get('/listing/{listing}', function (Listing $listing) {
     return view('listing', [
         'listing' => $listing
@@ -74,6 +74,7 @@ Route::get('/listing/{listing}', function (Listing $listing) {
 
 */
 
+Route::get('/listings/create', [ListingController::class, 'create']);
 
 
  /*
@@ -85,9 +86,13 @@ Route::get('/listing/{id}', function ($id) {
 */
 
 
+
+
 Route::get('/tailwind', function () {
     return view('tailwind');
 });
+
+
 
 
 /** Comando do php artisan

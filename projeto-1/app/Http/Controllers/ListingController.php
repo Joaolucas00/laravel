@@ -53,6 +53,10 @@ class ListingController extends Controller
             'listing' => $listing
         ]);
     }
+
+    public function create() {
+        return view('listings.create');
+    }
 }
 
 /** Route Model Binding
