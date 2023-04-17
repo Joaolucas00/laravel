@@ -76,6 +76,7 @@ Route::get('/listing/{listing}', function (Listing $listing) {
 
 Route::get('/listings/create', [ListingController::class, 'create']);
 
+Route::post('/listings', [ListingController::class, 'store']);
 
  /*
 Route::get('/listing/{id}', function ($id) {

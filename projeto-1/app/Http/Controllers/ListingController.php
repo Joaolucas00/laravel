@@ -57,6 +57,38 @@ class ListingController extends Controller
     public function create() {
         return view('listings.create');
     }
+
+
+    public function store(Request $request) {
+        $formFields = $request;
+    }
+
+    /** Validação 
+     *      
+     * 
+     *      Documentação
+     * 
+     *  Laravel provides several different approaches to validate your application's incoming data. 
+     * It is most common to use the validate method available on all incoming HTTP requests. 
+     * However, we will discuss other approaches to validation as well.
+     * 
+     * Laravel includes a wide variety of convenient validation rules that you may apply to data, 
+     * even providing the ability to validate if values are unique in a given database table. 
+     * We'll cover each of these validation rules in detail so that you are familiar with all of Laravel's validation features.
+     * 
+     * 
+     *  Now we are ready to fill in our store method with the logic to validate the new blog post. 
+     * To do this, we will use the validate method provided by the Illuminate\Http\Request object. 
+     * If the validation rules pass, your code will keep executing normally; 
+     * however, if validation fails, an Illuminate\Validation\ValidationException exception will be thrown and the proper error response will automatically be sent back to the user.
+     * 
+     * 
+     * Regras da validação documentadas: https://laravel.com/docs/10.x/validation#available-validation-rules
+     */
+
+
+
+
 }
 
 /** Route Model Binding
