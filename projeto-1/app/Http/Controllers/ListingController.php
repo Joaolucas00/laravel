@@ -13,6 +13,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Listing;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class ListingController extends Controller
 {
@@ -60,7 +61,10 @@ class ListingController extends Controller
 
 
     public function store(Request $request) {
-        $formFields = $request;
+        $formFields = $request->validate([
+            'title' => 'required',
+            'company' => ['required', Rule::unique('listings', 'empresa')],
+        ]);
     }
 
     /** Validação 
@@ -84,6 +88,19 @@ class ListingController extends Controller
      * 
      * 
      * Regras da validação documentadas: https://laravel.com/docs/10.x/validation#available-validation-rules
+     * 
+     *  regra required
+     * 
+     * The field under validation must be present in the input data and not empty. 
+     * A field is "empty" if it meets one of the following criteria:
+     *  The value is null.
+     *  The value is an empty string.
+     *  The value is an empty array or empty Countable object.
+     *  The value is an uploaded file with no path.
+     * 
+     * unique:table,column
+     * 
+     * The field under validation must not exist within the given database table.
      */
 
 
