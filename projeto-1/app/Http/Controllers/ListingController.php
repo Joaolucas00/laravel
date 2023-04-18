@@ -71,6 +71,15 @@ class ListingController extends Controller
             'descricao' => 'required'
 
         ]);
+        dd($formFields);
+
+        /** 
+         * caso a key do array acima não seja correspondente a coluna da table,
+         * dispara um erro. validate valida os dados e a diretiva @error pega o name do input dos dados no create.blade.php e o validate usa isso na hora de validar um request e disparar uma mensagem,
+         * se o name do input não estiver correspondido a coluna o código abaixo não será executado e disparará um erro.
+         * Caso o name do input não esteja correspondido a coluna na tabela, tente alterar a key do array
+         * 
+         */
 
         Listing::create($formFields);
 
