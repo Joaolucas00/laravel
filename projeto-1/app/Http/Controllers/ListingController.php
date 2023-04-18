@@ -69,8 +69,10 @@ class ListingController extends Controller
             'email' => ['required', 'email'], // após required, formato para email
             'tags' => 'required',
             'description' => 'required'
-            
+
         ]);
+
+        Listing::create($formFields);
 
         return redirect('/');
     }
