@@ -71,7 +71,7 @@ class ListingController extends Controller
             'descricao' => 'required'
 
         ]);
-        dd($formFields);
+        
 
         /** 
          * caso a key do array acima não seja correspondente a coluna da table,
