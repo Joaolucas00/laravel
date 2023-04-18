@@ -83,8 +83,11 @@ class ListingController extends Controller
 
         Listing::create($formFields);
 
-        return redirect('/');
+        //Session::flash();
+
+        return redirect('/')->with('message', 'Listing created successfully!');
     }
+
 
     /** Validação 
      *      
@@ -123,6 +126,14 @@ class ListingController extends Controller
      */
 
 
+/**
+ *       What is session () in Laravel?
+ * Resultado de imagem para Session::class laravel
+ * Laravel session is a way of storing the user information across the multiple user requests. 
+ * It keeps track of all the users that visit the application.
+ * 
+ * 
+ */
 
 
 }
