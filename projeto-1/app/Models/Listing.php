@@ -9,6 +9,19 @@ class Listing extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['titulo', 'empresa', 'Local', 'website', 'tags', 'descricao', 'email'];
+
+    /** $fillable explicado
+     * 
+     * The fillable property is used inside the model. It takes care of defining which fields are to be considered when the user will insert or update data.
+     * 
+     * Only the fields marked as fillable are used in the mass assignment. This is done to avoid mass assignment data attacks when the user sends data from the HTTP request. 
+     * So the data is matched with the fillable attributes before it is inserted into the table.
+     * 
+     * fonte: https://www.tutorialspoint.com/what-is-fillable-attribute-in-a-laravel-model
+     * 
+     */
+
     public function scopeFilter ($query, array $filters) {
         if ($filters['tag'] ?? false) {
             $query->where('tags', 'like', '%' . request('tag') . '%');
