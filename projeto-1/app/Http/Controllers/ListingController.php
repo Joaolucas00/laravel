@@ -66,11 +66,13 @@ class ListingController extends Controller
             'company' => ['required', Rule::unique('listings', 'empresa')],
             'location' => 'required',
             'website' => 'required',
-            'email' => ['required', 'email'],
+            'email' => ['required', 'email'], // após required, formato para email
             'tags' => 'required',
             'description' => 'required'
-
+            
         ]);
+
+        return redirect('/');
     }
 
     /** Validação 
