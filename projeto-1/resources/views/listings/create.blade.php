@@ -25,10 +25,10 @@
                             <input
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
-                                name="company"
+                                name="empresa"
                             />
 
-                            @error('company')
+                            @error('empresa')
                                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                             @enderror
 
@@ -41,10 +41,10 @@
                             <input
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
-                                name="title"
+                                name="titulo"
                                 placeholder="Example: Senior Laravel Developer"
                             />
-                        @error('title')
+                        @error('titulo')
                             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                         @enderror
                             
@@ -59,11 +59,11 @@
                             <input
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
-                                name="location"
+                                name="Local"
                                 placeholder="Example: Remote, Boston MA, etc"
                             />
 
-                            @error('location')
+                            @error('Local')
                                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                             @enderror
                         </div>
@@ -139,12 +139,12 @@
                             </label>
                             <textarea
                                 class="border border-gray-200 rounded p-2 w-full"
-                                name="description"
+                                name="descricao"
                                 rows="10"
                                 placeholder="Include tasks, requirements, salary, etc"
                             ></textarea>
 
-                        @error('description')
+                        @error('descricao')
                             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                         @enderror
                         </div>
