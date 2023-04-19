@@ -22,7 +22,8 @@ class ListingController extends Controller
     public function index() {
         return view('listings.index', [
             'listings' => Listing::latest()->filter(request(['tag', 'search']))->paginate(2)
-            //'listings' => Listing::latest()->filter(request(['tag', 'search']))->get(), em vez de get, podemos usar paginate para mostrar um certo números de listings
+            //'listings' => Listing::latest()->filter(request(['tag', 'search']))->get(), em vez de get, podemos usar paginate para mostrar um certo números de listings. Com paginate vem mais dados do que o get, com ele também podemos avançar as páginas com o método links().
+            // e com simplePaginate mostra apenas botões de avançar e voltar
             //'listings' => Listing::all()
         ]);
     }
