@@ -26,6 +26,7 @@
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="empresa"
+                                value="{{old('empresa')}}"
                             />
 
                             @error('empresa')
@@ -43,6 +44,7 @@
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="titulo"
                                 placeholder="Example: Senior Laravel Developer"
+                                value="{{old('titulo')}}"
                             />
                         @error('titulo')
                             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -61,6 +63,7 @@
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="Local"
                                 placeholder="Example: Remote, Boston MA, etc"
+                                value="{{old('Local')}}"
                             />
 
                             @error('Local')
@@ -76,6 +79,7 @@
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="email"
+                                value="{{old('email')}}"
                             />
 
                         @error('email')
@@ -94,6 +98,7 @@
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="website"
+                                value="{{old('website')}}"
                             />
 
                         @error('website')
@@ -110,6 +115,7 @@
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="tags"
                                 placeholder="Example: Laravel, Backend, Postgres, etc"
+                                value="{{old('tags')}}"
                             />
                         @error('tags')
                             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -124,6 +130,7 @@
                                 type="file"
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="logo"
+                                value="{{old('logo')}}"
                             />
                         @error('logo')
                             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -142,7 +149,7 @@
                                 name="descricao"
                                 rows="10"
                                 placeholder="Include tasks, requirements, salary, etc"
-                            ></textarea>
+                            >{{old('descricao')}}</textarea>
 
                         @error('descricao')
                             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
