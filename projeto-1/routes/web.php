@@ -111,7 +111,8 @@ Route::get('/tailwind', function () {
  *    db:
  *  php artisan db:seed
  *  
- *  
+ *    storage
+ *  php artisan storage:link
  **/ 
 
  /**

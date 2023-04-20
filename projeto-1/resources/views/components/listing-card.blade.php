@@ -16,7 +16,7 @@ Props são apenas dados que queremos passar para esse componente para que possam
     <div class="flex">
         <img
             class="hidden w-48 mr-6 md:block"
-            src="{{asset('img/no-image.jpg')}}"
+            src="{{$lis->logo ? asset('storage/' . $lis->logo) : asset('img/no-image.jpg')}}"
             alt=""
         />
         <div>

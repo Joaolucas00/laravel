@@ -12,7 +12,7 @@
     >
         <img
             class="w-48 mr-6 mb-6"
-            src="{{asset('img/no-image.jpg')}}"
+            src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('img/no-image.jpg')}}"
             alt=""
         />
 
