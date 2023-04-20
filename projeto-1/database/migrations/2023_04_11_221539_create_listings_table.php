@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('listings', function (Blueprint $table) {
             $table->id();
             $table->string('titulo');
-            $table->string('logo')->nullalbe(); // caminho para logo
+            $table->string('logo')->nullable(); // caminho para logo
             $table->string('tags');
             $table->string('empresa');
             $table->string('Local');

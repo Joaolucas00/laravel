@@ -74,6 +74,25 @@ class ListingController extends Controller
 
         ]);
         
+        if ($request->hasFile('logo')) {
+            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+        }
+
+        /** Documentação
+         *  What is file () in Laravel?
+         * 
+         * Laravel's filesystem configuration file is located at config/filesystems.php . 
+         * Within this file, you may configure all of your filesystem "disks".
+         *  Each disk represents a particular storage driver and storage location.
+         * 
+         * outro site
+         * What is the store method in laravel?
+         * 
+         * What is store function in Laravel? 
+         * If you have a file object(it could be a file or image object) in your controller, then you will have store() method associated with it. 
+         * This particular store function is used to save file or image objects in your server.
+         * 
+         */
 
         /** 
          * caso a key do array acima não seja correspondente a coluna da table,
