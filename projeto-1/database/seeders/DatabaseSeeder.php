@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
         Listing::create([
             'titulo' => 'Laravel Senior Developer',
             'tags' => 'laravel, php',
+            'logo' => '',
             'empresa' => 'Acme Corp',
             'Local' => 'SP',
             'email' => 'email@email.com',
@@ -33,6 +34,7 @@ class DatabaseSeeder extends Seeder
 
         Listing::create([
             'titulo' => 'Laravel Junior Developer',
+            'logo' => '',
             'tags' => 'laravel, php, JS, bootstrap',
             'empresa' => 'FDS Corp',
             'Local' => 'RJ',
@@ -43,6 +45,7 @@ class DatabaseSeeder extends Seeder
 
         Listing::create([
             'titulo' => 'Node js Senior Developer',
+            'logo' => '',
             'tags' => 'JavaScript, Node JS',
             'empresa' => 'FDP Corp',
             'Local' => 'SC',
@@ -54,6 +57,7 @@ class DatabaseSeeder extends Seeder
         Listing::create([
             'titulo' => 'Python Senior Developer',
             'tags' => 'python, django, full-stack',
+            'logo' => '',
             'empresa' => 'tmnc Corp',
             'Local' => 'RS',
             'email' => 'email@email.com',

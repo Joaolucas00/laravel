@@ -11,11 +11,34 @@
                         <p class="mb-4">Post a gig to find a developer</p>
                     </header>
 
-                    <form action="/listings" method="POST">
+                    <form action="/listings" method="POST" enctype="multipart/form-data">
                         @csrf {{-- Previnir ataque cross-site script. 
                             
                             Vídeo sobre: https://www.youtube.com/watch?v=2LYPyUk-L0k 
                             --}}
+                            {{--
+                                enctype
+
+                                The enctype attribute specifies how the form-data should be encoded when submitting it to the server.
+
+                                Note: The enctype attribute can be used only if method="post".
+
+                                valores
+
+                                application/x-www-form-urlencoded	
+                                
+                                Default. All characters are encoded before sent (spaces are converted to "+" symbols, and special characters are converted to ASCII HEX values)
+                                
+                                multipart/form-data	 
+                                
+                                This value is necessary if the user will upload a file through the form
+
+
+                                text/plain	
+                                
+                                Sends data without any encoding at all. Not recommended
+                                
+                                --}}
                         <div class="mb-6">
                             <label
                                 for="company"
