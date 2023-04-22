@@ -88,10 +88,11 @@ Route::get('/listing/{id}', function ($id) {
     ]);
 });
 */
-
+// Edit
 Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
 
-
+// Update Listing
+Route::put('/listings/{listing}', [ListingController::class, 'update']);
 
 Route::get('/tailwind', function () {
     return view('tailwind');

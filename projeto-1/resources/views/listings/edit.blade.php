@@ -6,12 +6,12 @@
                 >
                     <header class="text-center">
                         <h2 class="text-2xl font-bold uppercase mb-1">
-                            Create a Gig
+                            Edit Gig
                         </h2>
-                        <p class="mb-4">Post a gig to find a developer</p>
+                        <p class="mb-4">Edit: {{$listing->titulo}}</p>
                     </header>
 
-                    <form action="/listings" method="POST" enctype="multipart/form-data">
+                    <form action="/listings/{{$listing->id}}" method="POST" enctype="multipart/form-data">
                         @csrf {{-- Previnir ataque cross-site script. 
                             
                             Vídeo sobre: https://www.youtube.com/watch?v=2LYPyUk-L0k 
@@ -39,6 +39,11 @@
                                 Sends data without any encoding at all. Not recommended
                                 
                                 --}}
+                                @method('PUT')
+                                {{-- 
+                                    Dentro do form só podenos colocar os métodos GET e POST
+                                    O laravel tem a diretiva method para que podemos colocar outros métodos HTTP
+                                    --}}
                         <div class="mb-6">
                             <label
                                 for="company"
@@ -49,7 +54,7 @@
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="empresa"
-                                value="{{old('empresa')}}"
+                                value="{{$listing->empresa}}"
                             />
 
                             @error('empresa')
@@ -67,7 +72,7 @@
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="titulo"
                                 placeholder="Example: Senior Laravel Developer"
-                                value="{{old('titulo')}}"
+                                value="{{$listing->titulo}}"
                             />
                         @error('titulo')
                             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -86,7 +91,7 @@
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="Local"
                                 placeholder="Example: Remote, Boston MA, etc"
-                                value="{{old('Local')}}"
+                                value="{{$listing->Local}}"
                             />
 
                             @error('Local')
@@ -102,7 +107,7 @@
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="email"
-                                value="{{old('email')}}"
+                                value="{{$listing->email}}}"
                             />
 
                         @error('email')
@@ -121,7 +126,7 @@
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="website"
-                                value="{{old('website')}}"
+                                value="{{$listing->website}}"
                             />
 
                         @error('website')
@@ -138,7 +143,7 @@
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="tags"
                                 placeholder="Example: Laravel, Backend, Postgres, etc"
-                                value="{{old('tags')}}"
+                                value="{{$listing->tags}}"
                             />
                         @error('tags')
                             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -153,8 +158,12 @@
                                 type="file"
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="logo"
-                                value="{{old('logo')}}"
                             />
+                            <img
+                            class="w-48 mr-6 mb-6"
+                            src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('img/no-image.jpg')}}"
+                            alt=""
+                        />
                         @error('logo')
                             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                         @enderror
@@ -172,7 +181,7 @@
                                 name="descricao"
                                 rows="10"
                                 placeholder="Include tasks, requirements, salary, etc"
-                            >{{old('descricao')}}</textarea>
+                            >{{$listing->descricao}}</textarea>
 
                         @error('descricao')
                             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -183,7 +192,7 @@
                             <button
                                 class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"
                             >
-                                Create Gig
+                                Edit Gig
                             </button>
 
                             <a href="/" class="text-black ml-4"> Back </a>
