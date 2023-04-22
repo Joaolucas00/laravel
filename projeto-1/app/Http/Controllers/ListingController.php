@@ -134,7 +134,7 @@ class ListingController extends Controller
 
         //Session::flash();
 
-        return back()->with('message', 'Listing updated successfully!');
+        return redirect('/listings' . '/' . $listing->id)->with('message', 'Listing updated successfully!');
     }
 
     public function destroy (Listing $listing) {

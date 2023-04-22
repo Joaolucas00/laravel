@@ -90,6 +90,9 @@ Route::get('/listing/{id}', function ($id) {
 // Edit
 Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
 
+Route::get('/listings', function () {
+    return redirect('/');
+});
 // Update Listing
 Route::put('/listings/{listing}', [ListingController::class, 'update']);
 
