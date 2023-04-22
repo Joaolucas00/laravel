@@ -78,8 +78,7 @@ Route::get('/listings/create', [ListingController::class, 'create']);
 
 Route::post('/listings', [ListingController::class, 'store']);
 
-// Show edit form
-Route::get('/listings',);
+
 
  /*
 Route::get('/listing/{id}', function ($id) {
@@ -93,6 +92,10 @@ Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
 
 // Update Listing
 Route::put('/listings/{listing}', [ListingController::class, 'update']);
+
+
+
+Route::delete('/listings/{listing}', [ListingController::class, 'destroy']);
 
 Route::get('/tailwind', function () {
     return view('tailwind');
