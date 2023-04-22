@@ -63,7 +63,7 @@ Route::get('/', [ListingController::class, 'index']);
  */
 
 
-Route::get('/listing/{listing}', [ListingController::class, 'show']);
+
 
  /* 
 Route::get('/listing/{listing}', function (Listing $listing) {
@@ -78,6 +78,9 @@ Route::get('/listings/create', [ListingController::class, 'create']);
 
 Route::post('/listings', [ListingController::class, 'store']);
 
+// Show edit form
+Route::get('/listings',);
+
  /*
 Route::get('/listing/{id}', function ($id) {
     return view('listing', [
@@ -86,6 +89,7 @@ Route::get('/listing/{id}', function ($id) {
 });
 */
 
+Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
 
 
 
@@ -93,7 +97,7 @@ Route::get('/tailwind', function () {
     return view('tailwind');
 });
 
-
+Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
 
 /** Comando do php artisan
