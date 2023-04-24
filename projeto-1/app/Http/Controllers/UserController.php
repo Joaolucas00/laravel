@@ -19,11 +19,11 @@ class UserController extends Controller
             'password' => 'required|confirmed|min:6'
         ]);
 
-        $formFields['password'] = bcrypt($formFields['password']);
 
+        $formFields['password'] = bcrypt($formFields['password']);
         $user = User::create($formFields);
         auth()->login($user);
-        return redirect('/')->with('message', 'User created and logged in');
+        return redirect('/')->with('message', 'User created and logged in!');
         /** 
          * auth() - Get the available auth instance
          * 

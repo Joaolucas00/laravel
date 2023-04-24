@@ -20,6 +20,7 @@ class="bg-gray-50 border border-gray-200 p-10 rounded max-w-lg mx-auto mt-24"
             type="text"
             class="border border-gray-200 rounded p-2 w-full"
             name="name"
+            value="{{old('name')}}"
         />
         @error('name')
         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -35,6 +36,7 @@ class="bg-gray-50 border border-gray-200 p-10 rounded max-w-lg mx-auto mt-24"
             type="email"
             class="border border-gray-200 rounded p-2 w-full"
             name="email"
+            value="{{old('email')}}"
         />
         <!-- Error Example -->
 
