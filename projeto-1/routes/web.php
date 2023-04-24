@@ -105,10 +105,14 @@ Route::get('/tailwind', function () {
     return view('tailwind');
 });
 
-Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
 // Show Register/Create Form
-Route::get('/register', [UserController::class, 'create']);
+Route::get('/register', [UserController::class, 'register']);
+
+Route::post('/users', [UserController::class, 'store']);
+
+Route::get('/listings/{listing}', [ListingController::class, 'show']);
+
 
 
 /** Comando do php artisan
