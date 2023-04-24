@@ -78,6 +78,17 @@ class ListingController extends Controller
             $formFields['logo'] = $request->file('logo')->store('logos', 'public');
         }
 
+        /** hasFile()
+         *  Determine if the uploaded data contains a file
+         * 
+         *  file()
+         *  Retrive a file from the request
+         * 
+         *  store
+         *  Store the uploaded file on a filesystem disk
+         * 
+         */
+
         /** Documentação
          *  What is file () in Laravel?
          * 

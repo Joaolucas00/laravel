@@ -28,7 +28,7 @@ class Listing extends Model
         }
 
         if ($filters['search'] ?? false) {
-            $query->where('titulo', 'like', '%' . request('search') . '%')->orWhere('descricao', 'like', '%' . request('search') . '%')->orWhere('tags', 'like', '%' . request('search') . '%');
+            $query->where('titulo', 'like', '%' . request('search') . '%')->orWhere('descricao', 'like', '%' . request('search') . '%')->orWhere('tags', 'like', '%' . request('search') . '%')->orWhere('empresa', 'like', '%' . request('search') . '%');
         }
     }
 }
