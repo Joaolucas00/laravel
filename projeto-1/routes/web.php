@@ -111,6 +111,8 @@ Route::get('/register', [UserController::class, 'register']);
 
 Route::post('/users', [UserController::class, 'store']);
 
+Route::post('/logout', [UserController::class, 'logout']);
+
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
 
