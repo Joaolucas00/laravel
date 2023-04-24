@@ -53,6 +53,8 @@ class UserController extends Controller
          *  Documentação
          *  In addition to calling the logout method, 
          * it is recommended that you invalidate the user's session and regenerate their CSRF token.
+         * 
+         * with() - Flash a piece of data to the session
          */
     }
 }
