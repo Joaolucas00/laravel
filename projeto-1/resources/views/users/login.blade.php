@@ -10,7 +10,7 @@ class="bg-gray-50 border border-gray-200 p-10 rounded max-w-lg mx-auto mt-24"
     <p class="mb-4">Log into your account to post gigs</p>
 </header>
 
-<form action="/users/authenticate" method="POST">
+<form action="/user/authenticate" method="POST">
     @csrf
     <div class="mb-6">
         <label for="email" class="inline-block text-lg mb-2"

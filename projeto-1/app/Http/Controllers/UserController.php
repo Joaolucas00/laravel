@@ -73,10 +73,9 @@ class UserController extends Controller
         if (auth()->attempt($formFields)) {
             $request->session()->regenerate();
             return redirect('/')->with('message', 'You are now logged in!');
-        } else {
-            return redirect('/user/authenticate')->with('message', 'Não faz merda!');
-        }
-        return redirect('/');
+        } 
+
+        return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
 
         /**
          *  attempt() - Attempt to authenticate a user the given credentials, return bool
