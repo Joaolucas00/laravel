@@ -113,6 +113,12 @@ Route::post('/users', [UserController::class, 'store']);
 
 Route::post('/logout', [UserController::class, 'logout']);
 
+// Show login form
+Route::get('/login', [UserController::class, 'login']);
+
+// Login
+Route::post('/user/authenticate', [UserController::class, 'authenticate']);
+
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
 

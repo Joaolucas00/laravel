@@ -54,7 +54,34 @@ class UserController extends Controller
          *  In addition to calling the logout method, 
          * it is recommended that you invalidate the user's session and regenerate their CSRF token.
          * 
-         * with() - Flash a piece of data to the session
+         * with() - Flash a piece of data to the session, return $this, 
+         * param string|array $key
+         * param mixed $value
+         */
+    }
+
+    public function login () {
+        return view('users.login');
+    }
+
+    public function authenticate(Request $request) {
+        $formFields = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => 'required',
+        ]);
+
+        if (auth()->attempt($formFields)) {
+            $request->session()->regenerate();
+            return redirect('/')->with('message', 'You are now logged in!');
+        } 
+
+        return;
+
+        /**
+         *  attempt() - Attempt to authenticate a user the given credentials, return bool
+         * 
+         * regenerate - Generate a new session identifier, return bool
+         * 
          */
     }
 }
