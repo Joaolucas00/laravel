@@ -73,14 +73,29 @@ class UserController extends Controller
         if (auth()->attempt($formFields)) {
             $request->session()->regenerate();
             return redirect('/')->with('message', 'You are now logged in!');
-        } 
-
-        return;
+        } else {
+            return redirect('/user/authenticate')->with('message', 'Não faz merda!');
+        }
+        return redirect('/');
 
         /**
          *  attempt() - Attempt to authenticate a user the given credentials, return bool
+         * The attempt method accepts an array of key / value pairs as its first argument. 
+         * The values in the array will be used to find the user in your database table
          * 
          * regenerate - Generate a new session identifier, return bool
+         * 
+         * 
+         * 
+         * In PHP by default, all sessions are files that are stored in a tmp directory which if you analyze the session.
+         * save_path value in php.ini file, you will see where it is. 
+         * These files include the serialized session data that you access using $_SESSION keyword.
+         * 
+         * Laravel utilize basically the original session file store but acts a little bit different. 
+         * Beside changing the directory they are saved, 
+         * when you call the regenerate function it creates another session file and deletes the old one.
+         *  You can see it the implementation Illuminate\Session\Store.php. 
+         * The migrate function is used to delete the session and return new session id.
          * 
          */
     }
