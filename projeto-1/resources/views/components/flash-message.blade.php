@@ -4,7 +4,7 @@
         {{session('message')}}
     </div>
     {{---
-        setTimeout() tem dois paramêtros, primeiro um função a ser executafda
+        setTimeout() tem dois paramêtros, primeiro um função a ser executada
 
         --}}
 @endif

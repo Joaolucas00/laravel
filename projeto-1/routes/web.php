@@ -75,9 +75,12 @@ Route::get('/listing/{listing}', function (Listing $listing) {
 
 */
 
-Route::get('/listings/create', [ListingController::class, 'create']);
+Route::get('/listings/create', [ListingController::class, 'create'])->middleware('auth');
+    /**
+     * Get the path the user should be redirected to when they are not authenticated.
+     */
 
-Route::post('/listings', [ListingController::class, 'store']);
+Route::post('/listings', [ListingController::class, 'store'])->middleware('auth');
 
 
 
@@ -89,17 +92,17 @@ Route::get('/listing/{id}', function ($id) {
 });
 */
 // Edit
-Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
+Route::get('/listings/{listing}/edit', [ListingController::class, 'edit'])->middleware('auth');
 
 Route::get('/listings', function () {
     return redirect('/');
 });
 // Update Listing
-Route::put('/listings/{listing}', [ListingController::class, 'update']);
+Route::put('/listings/{listing}', [ListingController::class, 'update'])->middleware('auth');
 
 
 
-Route::delete('/listings/{listing}', [ListingController::class, 'destroy']);
+Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->middleware('auth');
 
 Route::get('/tailwind', function () {
     return view('tailwind');
@@ -107,14 +110,20 @@ Route::get('/tailwind', function () {
 
 
 // Show Register/Create Form
-Route::get('/register', [UserController::class, 'register']);
+Route::get('/register', [UserController::class, 'register'])->middleware('guest');
 
 Route::post('/users', [UserController::class, 'store']);
 
-Route::post('/logout', [UserController::class, 'logout']);
+Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
 // Show login form
-Route::get('/login', [UserController::class, 'login']);
+Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
+
+/** name()
+ *  Add or change the route name
+ * 
+ * serve também para route() que recebe como parâmetro o nome da route
+ */
 
 // Login
 Route::post('/user/authenticate', [UserController::class, 'authenticate']);
@@ -157,6 +166,19 @@ Route::get('/listings/{listing}', [ListingController::class, 'show']);
 // destroy - Delete listing  
 
 
+/** Middleware
+ * 
+ *  Middleware provide a convenient mechanism for inspecting and filtering HTTP requests entering your application. 
+ * For example, Laravel includes a middleware that verifies the user of your application is authenticated. 
+ * If the user is not authenticated, the middleware will redirect the user to your application's login screen. 
+ * However, if the user is authenticated, the middleware will allow the request to proceed further into the application.
+ * 
+ * Additional middleware can be written to perform a variety of tasks besides authentication. 
+ * For example, a logging middleware might log all incoming requests to your application. 
+ * There are several middleware included in the Laravel framework, including middleware for authentication and CSRF protection. 
+ * All of these middleware are located in the app/Http/Middleware directory.
+ * 
+ */
 
 
 
