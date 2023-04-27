@@ -42,6 +42,8 @@
 
                         user() - Get the currently authenticated user
                         
+                        auth() - Get the available auth instance
+
                         @auth - caso o usuário esteja logado
 
                         @guest caso o usuário não esteja logado ou um visitante ao nosso site
