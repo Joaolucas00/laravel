@@ -147,9 +147,20 @@ Route::get('/listings/{listing}', [ListingController::class, 'show']);
  *    db:
  *  php artisan db:seed
  *  
- *    storage
+ *    storage:
  *  php artisan storage:link
+ *  
+ *    tinker:
+ *  php artisan tinker
+ * 
  **/ 
+
+ /** tinker
+  * O Tinker é um console interativo do Laravel, um shell do PHP com acesso às classes do nosso projeto. 
+  * O que podemos fazer no Tinker é testar nossos relacionamentos e queries no banco de dados. 
+  * Para fazer uma pequena demonstração, é bom começarmos pelo começo, desde a criação do projeto.
+  * 
+  */
 
  /**
   *  O método find retorna o modelo que possui uma chave primária correspondente à chave fornecida

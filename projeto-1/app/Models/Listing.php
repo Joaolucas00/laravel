@@ -31,6 +31,16 @@ class Listing extends Model
             $query->where('titulo', 'like', '%' . request('search') . '%')->orWhere('descricao', 'like', '%' . request('search') . '%')->orWhere('tags', 'like', '%' . request('search') . '%')->orWhere('empresa', 'like', '%' . request('search') . '%');
         }
     }
+
+    // Relationship To User
+
+    public function user() {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+    /**
+     * belongsTo() - Define an inverse one-to-one or many relationship
+     */
+
 }
 
 

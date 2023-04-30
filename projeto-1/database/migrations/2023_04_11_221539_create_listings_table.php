@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('listings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('titulo');
             $table->string('logo')->nullable(); // caminho para logo
             $table->string('tags');
@@ -24,6 +25,12 @@ return new class extends Migration
             $table->timestamps();
         });
     }
+    /**
+     * foreignId - Create a new unsigned big integer (8-byte) column on the table
+     * 
+     * constrained - Create a foreign key constraint on this column referencing the "id" column of the conventionally related table
+     * 
+     */
 
     /**
      * Reverse the migrations.

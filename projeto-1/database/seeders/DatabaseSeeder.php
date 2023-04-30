@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-
+use App\Models\User;
 use App\Models\Listing;
 use Illuminate\Database\Seeder;
 
@@ -14,15 +14,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\User::factory(5)->create();
+        //\App\Models\User::factory(5)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
 
+        $user = User::factory()->create([
+            'name' => 'Jao',
+            'email' => 'test@test.com',
+        ]);
+
         Listing::create([
             'titulo' => 'Laravel Senior Developer',
+            'user_id' => $user->id,
             'tags' => 'laravel, php',
             'logo' => '',
             'empresa' => 'Acme Corp',
@@ -34,6 +40,7 @@ class DatabaseSeeder extends Seeder
 
         Listing::create([
             'titulo' => 'Laravel Junior Developer',
+            'user_id' => $user->id,
             'logo' => '',
             'tags' => 'laravel, php, JS, bootstrap',
             'empresa' => 'FDS Corp',
@@ -45,6 +52,7 @@ class DatabaseSeeder extends Seeder
 
         Listing::create([
             'titulo' => 'Node js Senior Developer',
+            'user_id' => $user->id,
             'logo' => '',
             'tags' => 'JavaScript, Node JS',
             'empresa' => 'FDP Corp',
@@ -56,6 +64,7 @@ class DatabaseSeeder extends Seeder
 
         Listing::create([
             'titulo' => 'Python Senior Developer',
+            'user_id' => $user->id,
             'tags' => 'python, django, full-stack',
             'logo' => '',
             'empresa' => 'tmnc Corp',
