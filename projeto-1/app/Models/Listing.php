@@ -9,7 +9,7 @@ class Listing extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['titulo', 'logo', 'empresa', 'Local', 'website', 'email', 'tags', 'descricao'];
+    protected $fillable = ['titulo', 'user_id', 'logo', 'empresa', 'Local', 'website', 'email', 'tags', 'descricao'];
 
     /** $fillable explicado
      * 

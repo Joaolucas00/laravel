@@ -113,6 +113,12 @@ class ListingController extends Controller
          * 
          */
 
+         $formFields['user_id'] = auth()->id();
+
+         /**
+          * id() - Get the ID for the currently authenticated user.
+          */
+
         Listing::create($formFields);
 
         //Session::flash();
@@ -121,6 +127,10 @@ class ListingController extends Controller
     }
 
     public function edit(Listing $listing) {
+        if (auth()->id() != $listing->user_id) {
+            return redirect('/');
+        }
+
         return view('listings.edit', ['listing' => $listing]);
     }
 

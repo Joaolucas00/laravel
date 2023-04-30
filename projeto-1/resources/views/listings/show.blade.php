@@ -57,7 +57,9 @@
 
 
 <x-card class="mt-4 p-2 flex space-x-6">
-    <a href="/listings/{{ $listing->id }}/edit">
+    @auth
+    @if (auth()->id() == $listing->user_id)
+    <a href="/listings/{{ $listing->id }}/e dit">
         <i class="fa-solid fa-pencil"></i> Edit
     </a>
     <form action="/listings/{{ $listing->id}}" method="POST">
@@ -65,6 +67,12 @@
         @method('DELETE')
         <button class="text-red-500"><i class="fa-solid fa-trash"></i> Delete</button>
     </form>
+    @endif
+    @else
+    <a href="/register">
+        Logar
+    </a>
+    @endauth
 </x-card>
 </div>
 
