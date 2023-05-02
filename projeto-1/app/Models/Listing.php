@@ -20,6 +20,10 @@ class Listing extends Model
      * 
      * fonte: https://www.tutorialspoint.com/what-is-fillable-attribute-in-a-laravel-model
      * 
+     * Há outros atributos também.
+     * $hidden
+     * $visible
+     * 
      */
 
     public function scopeFilter ($query, array $filters) {
