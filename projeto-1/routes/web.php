@@ -105,7 +105,8 @@ Route::put('/listings/{listing}', [ListingController::class, 'update'])->middlew
 Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->middleware('auth');
 
 Route::get('/tailwind', function () {
-    return view('tailwind');
+    $content = view('tailwind');
+    return response($content, 404)->header('Dado', 'Valor');
 });
 
 
