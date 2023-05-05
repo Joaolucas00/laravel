@@ -100,7 +100,7 @@ Route::get('/listings', function () {
 // Update Listing
 Route::put('/listings/{listing}', [ListingController::class, 'update'])->middleware('auth');
 
-
+Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
 
 Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->middleware('auth');
 

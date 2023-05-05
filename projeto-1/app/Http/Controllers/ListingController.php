@@ -158,10 +158,24 @@ class ListingController extends Controller
         return redirect('/listings' . '/' . $listing->id)->with('message', 'Listing updated successfully!');
     }
 
+    public function manage() {
+         return view('listings.manage', [
+            'listings' => auth()->user()->listings()->get()
+         ]);
+    }
+
     public function destroy (Listing $listing) {
         $listing->delete();
         return redirect('/')->with('message', 'Listing Deleted Successfully!');
     }
+/*
+    public function manage() {
+        return view('listings.manage', [
+            'listings' => auth()->user()->listings()->get(),
+        ]);
+    }
+*/
+
 
     /** Validação 
      *      
