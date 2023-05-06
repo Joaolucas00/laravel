@@ -20,7 +20,7 @@
                 <td
                     class="px-4 py-8 border-t border-b border-gray-300 text-lg"
                 >
-                    <a href="show.html">
+                    <a href="/listings/{{$lis->id}}">
                         {{$lis->titulo}}
                     </a>
                 </td>
