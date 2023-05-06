@@ -28,7 +28,7 @@
                     class="px-4 py-8 border-t border-b border-gray-300 text-lg"
                 >
                     <a
-                        href="edit.html"
+                        href="/listings/{{$lis->id}}/edit"
                         class="text-blue-400 px-6 py-2 rounded-xl"
                         ><i
                             class="fa-solid fa-pen-to-square"
@@ -39,7 +39,9 @@
                 <td
                     class="px-4 py-8 border-t border-b border-gray-300 text-lg"
                 >
-                    <form action="">
+                    <form action="/listings/{{$lis->id}}" method="POST">
+                        @csrf
+                        @method('DELETE')
                         <button class="text-red-600">
                             <i
                                 class="fa-solid fa-trash-can"
